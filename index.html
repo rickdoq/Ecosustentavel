@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecosustentável</title>
+    <link rel="stylesheet" href="styles.css">
+    
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+
+
+    <!-- Meta Property -->
+    <meta property="og:site_name" content="Ecosustentável">
+    <meta property="og:title" content="Sustentabilidade">
+    <meta property="og:description" content="Descubra como a eco-sustentabilidade promove práticas ambientalmente responsáveis, preservando recursos naturais e protegendo o meio ambiente para as futuras gerações.">
+    <meta property="og:image" content="images/logo.jpg">
+    <meta property="og:image:type" content="image/jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="1200">
+    <meta property="og:image" content="images/logo.jpg">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="620">
+    <meta property="og:image" content="images/logo.jpg">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="620">
+  
+    <meta property="twitter:site" content="Ecosustentável">
+    <meta property="twitter:creator" content="robert">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Ecosustentável">
+    <meta property="twitter:description" content="Descubra como a eco-sustentabilidade promove práticas ambientalmente responsáveis, preservando recursos naturais e protegendo o meio ambiente para as futuras gerações.">
+    <meta property="twitter:image:src" content="images/logo.jpg">
+    <meta property="twitter:image:width" content="1200">
+    <meta property="twitter:image:height" content="1200">
+     <!--Fim -->
+
+
+    <script defer src="scripts.js"></script>
+</head>
+
+<body onload="initializeApp()">
+
+    <body onload="initializeApp()">
+        <div id="loading-screen">
+            <div class="loading-animation">
+                <div class="ball"></div>
+                <h1>Developed by Robert</h1>
+                <h1>Version 0.9</h1>
+            </div>
+        </div>
+        <div class="container" id="app-container">
+            <header>
+                <h1>Ecosustentável</h1>
+                <div class="switch-container">
+                    <input type="checkbox" id="theme-switch" onclick="toggleTheme()">
+                    <label for="theme-switch">🌙</label>
+                </div>
+            </header>
+            <main id="main-content">
+
+                <!-- Home Section -->
+                <div id="home" class="page active">
+                    <form id="uploadForm" onsubmit="handleImageUpload(event)">
+                        <label for="imageInput" id="imageLabel">Escolher Imagem</label>
+                        <input type="file" id="imageInput" accept="image/*" required>
+                        <input type="text" id="titleInput" placeholder="Enter title" required>
+                        <button type="submit" id="uploadButton">Enviar</button>
+                    </form>
+
+                    <div id="imageFeed"></div>
+                    <button id="restoreDefault" onclick="restoreDefaultImages()">Padrão</button>
+                </div>
+
+                <!-- Chat Section -->
+                <section id="chat" class="page">
+                    <div class="chat-list">
+                        <div class="chat-person" onclick="openChat('person1', 'Vitória')">
+                            <img src="images/person1.png" alt="Pessoa 1">
+                            <span>Vitória</span>
+                        </div>
+                        <div class="chat-person" onclick="openChat('person2', 'Fernanda')">
+                            <img src="images/person2.png" alt="Pessoa 2">
+                            <span>Fernanda</span>
+                        </div>
+                        <div class="chat-person" onclick="openChat('person3', 'Maria')">
+                            <img src="images/person3.png" alt="Pessoa 3">
+                            <span>Maria</span>
+                        </div>
+                    </div>
+                    <div class="chat-window" id="chat-window">
+                        <div class="chat-header">
+                            <img id="chat-user-photo" src="" alt="User Photo">
+                            <span id="chat-user-name"></span>
+                        </div>
+                        <div id="chat-content">
+                            <!-- Conteúdo da conversa aparecerá aqui -->
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Denúncia Section -->
+                <section id="denuncia" class="page">
+                    <iframe
+                        src="https://docs.google.com/forms/d/e/1FAIpQLSeAq3H4sGBt4D43g2j5BknzTWM-JTGtxiBMx5nXF4f1i_zJMQ/viewform?embedded=true"
+                        width="100%" height="600px" frameborder="0">Carregando…</iframe>
+                    <iframe
+                        src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT1_99bLNyGJEqO9mYcKTN0YXbvpQZWjqwJPOk8ayvcXZY05kqCyd22mVpKR3DvC3PNdk2ER5GY51zb/pubhtml?widget=true&amp;"
+                        width="100%" frameborder="0">Carregando…</iframe>
+                </section>
+
+                <!-- Localizar Section -->
+                <section id="localizar" class="page">
+                    <div id="map">
+                        <div style="width: 100%"><iframe width="100%" height="600" frameborder="0" scrolling="no"
+                                marginheight="0" marginwidth="0"
+                                src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Lixo+()&amp;t=&amp;z=11&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a
+                                    href="https://www.gps.ie/">gps systems</a></iframe></div>
+                    </div>
+                </section>
+
+                <!-- FAQ Section -->
+                <section id="faq" class="page">
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaqAnswer(this)">- Como descartar corretamente seu
+                            lixo?</button>
+                        <div class="faq-answer">
+                            <p>De maneira geral, o descarte correto do lixo doméstico envolve:</p>
+                            <p>Separação adequada de cada tipo de resíduo;<br />
+                                Escolha de recipientes apropriado para acondicionar cada material.<br />
+                                Envio para os pontos de coleta seletiva ou estabelecimentos especializados em descarte
+                                correto;<br />
+                                Optar pela compostagem dos resíduos orgânicos.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaqAnswer(this)">- Quais são os principais problemas
+                            do saneamento básico?</button>
+                        <div class="faq-answer">
+                            <p>Os 6 principais problemas da falta de saneamento:</p>
+                            <p>Doenças...<br />
+                                Poluição...<br />
+                                Problemas escolares...<br />
+                                Desvalorização do turismo...<br />
+                                Aumento da desigualdade social...<br />
+                                Enchentes...</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaqAnswer(this)">- O que poderia ser feito para
+                            melhorar o saneamento básico?</button>
+                        <div class="faq-answer">
+                            <p>Investimento em Infraestrutura: Construir e manter sistemas adequados de esgoto, água
+                                potável e tratamento de resíduos.<br />
+                                <br />
+                                Educação e Conscientização: Promover a educação sobre higiene e a importância do
+                                saneamento.<br />
+                                <br />
+                                Tecnologia e Inovação: Utilizar novas tecnologias para tratamento e reciclagem de água e
+                                resíduos.<br />
+                                <br />
+                                Gestão de Resíduos: Implementar coleta seletiva e reciclagem, além de promover a
+                                compostagem.<br />
+                                <br />
+                                Acesso Universal e Inclusivo: Garantir que todos, especialmente em áreas periféricas e
+                                rurais, tenham acesso a serviços de saneamento.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaqAnswer(this)">- Quais são as consequências da
+                            falta de saneamento básico?</button>
+                        <div class="faq-answer">
+                            <p>Problemas de Saúde: A falta de acesso a água limpa e saneamento pode levar à propagação
+                                de doenças como cólera, diarreia, hepatite e infecções parasitárias.<br />
+                                <br />
+                                Poluição Ambiental: Resíduos sólidos e esgoto não tratados podem contaminar solo e água,
+                                prejudicando ecossistemas e fontes de água potável.<br />
+                                <br />
+                                Impactos Econômicos: Doenças relacionadas à falta de saneamento podem causar perdas
+                                econômicas devido ao aumento dos custos de saúde e à redução da produtividade devido a
+                                doenças e faltas no trabalho.<br />
+                                <br />
+                                Desigualdade Social: A falta de saneamento básico geralmente afeta desproporcionalmente
+                                comunidades de baixa renda, exacerbando as desigualdades sociais e econômicas.<br />
+                                <br />
+                                Danos à Qualidade de Vida: A ausência de saneamento adequado pode levar a condições de
+                                vida insalubres, afetando o bem-estar geral e a qualidade de vida das pessoas.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaqAnswer(this)">- Como garantir o saneamento
+                            básico?</button>
+                        <div class="faq-answer">
+                            <p>Explicação sobre como garantir o saneamento básico...</p>
+                        </div>
+                    </div>
+                </section>
+            </main>
+            <nav>
+                <div class="nav-item" onclick="showPage('home')" title="Home">🏠</div>
+                <div class="nav-item" onclick="showPage('chat')" title="Chat">💬</div>
+                <div class="nav-item" onclick="showPage('denuncia')" title="Denúncia">⚠️</div>
+                <div class="nav-item" onclick="showPage('localizar')" title="Localizar">📍</div>
+                <div class="nav-item" onclick="showPage('faq')" title="FAQ">❓</div>
+            </nav>
+        </div>
+    </body>
+
+</html>
