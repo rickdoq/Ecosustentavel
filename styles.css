@@ -69,6 +69,7 @@ main {
 
 
 
+
 /* Estilo geral para o formulário de upload */
 #uploadForm {
     background: #ffffff;
@@ -347,7 +348,16 @@ body.dark-mode .faq-answer {
     text-align: center;
 }
 
+#loading-screen img {
+    width: 50%;
+    margin-bottom: 35px;
+    background-color: #000000;
+    padding: 2px;
+    border-radius: 50px;
+}
+
 .ball {
+    margin: auto;
     width: 20px;
     height: 20px;
     background-color: #333;
